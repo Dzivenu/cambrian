@@ -17,8 +17,8 @@ class Cambrian
     require_once('classes/View.php');
     $v = new CambrianView();
     $v->parse();
-    
-    if(isset($_GET['url']) {
+
+    if(isset($_GET['url'])) {
       print_r($_GET['url']);
     }
   }
