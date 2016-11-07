@@ -1,14 +1,14 @@
 <nav id="nav_id" class="mod-nav">
   <ul>
     <?php 
-    $this->data['navigation']['pages'] = CambrianNavigationModule::create(
+    $nav = CambrianNavigationModule::create(
       [
         ['page'=>'home'],
         ['page'=>'docs'],
         ['external'=>true,'href'=>'/whitepaper.pdf','title'=>'Whitepaper']
       ]
     );
-    foreach($this->data['navigation']['pages'] as $page): ?>
+    foreach($nav as $page): ?>
     <li>
       <?php if ($page['href'] === $this->data['url']): ?>
         <span class="active"><?= $page['title'] ?></span>
