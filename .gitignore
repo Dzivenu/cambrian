@@ -118,6 +118,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-#Cambrio - Page Content and Layout
+#Cambrio - Page Content (except docs), Layout and caches
 /layout/*
-/public/*
+/pages/*/*
+!/pages/docs/*
+/public/css/*
