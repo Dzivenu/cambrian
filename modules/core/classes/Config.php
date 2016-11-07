@@ -26,7 +26,7 @@ Class CambrianConfig extends Cambrian
     } elseif($m == 'all') {
       $m = [];
       // @todo load modules from folders available in /modules
-      $installed = $this->readdirectory('../modules');
+      $installed = CambrianFiles::readDir('../modules');
       foreach($installed as $module => $data) {
         if($data['type'] == 'dir') {
           $m[] = $module;
@@ -64,9 +64,5 @@ Class CambrianConfig extends Cambrian
     }
 
     return $this->config;
-  }
-
-  public function readdirectory($path) {
-    return CambrianFiles::readDir($path);
   }
 }
