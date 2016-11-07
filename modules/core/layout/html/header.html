@@ -11,7 +11,16 @@
 <header id="header">
     <div class="container">
         <div class="row">
-            <?php $this->includeFile('mod_navigation_main'); ?>
+            <?php $this->includeFile(
+              'mod_navigation_main',
+              [
+                'pages'=>[
+                  ['page'=>'home'],
+                  ['page'=>'docs'],
+                  ['external'=>true,'href'=>'https://github.com/pharesim/cambrian','title'=>'fork it on github']
+                ]
+              ]
+            ); ?>
         </div>
     </div>
 </header>

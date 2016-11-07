@@ -1,8 +1,9 @@
 <?php
 class CambrianNavigationModule
 {
+  public $pages = [];
 
-  public static function create($links) {
+  public function __construct($links) {
     $result = [];
     $pages = self::getArray();
     foreach($links as $link) {
@@ -16,10 +17,11 @@ class CambrianNavigationModule
       }
     }
 
+    $this->pages = $result;
     return $result;
   }
 
-  public static function getArray() {
+  private function getArray() {
     $result = [];
     $pages = CambrianFiles::readDir('../pages');
     foreach($pages as $key=>$value) {

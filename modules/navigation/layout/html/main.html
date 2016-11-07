@@ -1,14 +1,11 @@
+<?php 
+  $navigation = new CambrianNavigationModule(
+    $this->data['pages']
+  );
+?>
 <nav id="nav_id" class="mod-nav">
   <ul>
-    <?php 
-    $nav = CambrianNavigationModule::create(
-      [
-        ['page'=>'home'],
-        ['page'=>'docs'],
-        ['external'=>true,'href'=>'https://github.com/pharesim/cambrian','title'=>'fork it on github']
-      ]
-    );
-    foreach($nav as $page): ?>
+    <?php foreach($navigation->pages as $page): ?>
     <li>
       <?php if ($page['href'] === $this->data['url']): ?>
         <span class="active"><?= $page['title'] ?></span>
