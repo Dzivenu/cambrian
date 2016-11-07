@@ -38,7 +38,7 @@ Class CambrianView
     {
       $content = file_get_contents('../pages'.$path.'/content.html');
     } else {
-      $content = 'FILE NOT FOUND';
+      $content = $this->includeFile('mod_core_404');
     }
     return $content;
   }
