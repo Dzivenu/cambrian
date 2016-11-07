@@ -2,6 +2,7 @@
 Class CambrianView
 {
 
+  public $home = '/home';
   private $data = [];
 
   public function parse($url = '/home') {
@@ -32,12 +33,14 @@ Class CambrianView
     foreach($url as $snip) {
       $path .= '/'.$snip;
     }
-    
+
     if(file_exists('../pages'.$path.'/content.html'))
     {
       $content = file_get_contents('../pages'.$path.'/content.html');
-      return $content;
+    } else {
+      $content = $this->getContent($this->home);
     }
+    return $content;
   }
 
 }
