@@ -1,6 +1,10 @@
 <IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+  RewriteBase /
+  # redirect html pages to the root domain
+  RewriteRule ^index\.html$ / [NC,R,L]
+  RewriteRule ^home$ / [NC,R,L]
 </IfModule>
