@@ -10,6 +10,7 @@ class Cambrian
   public function __construct($configFile = 'main')
   {
     require_once 'classes/Config.php';
+    require_once 'classes/Files.php';
     $c = new CambrianConfig($this->config);
     $this->config = $c->processConfig($configFile);
 
