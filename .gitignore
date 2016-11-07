@@ -118,11 +118,23 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-#Cambrio - Page Content (except docs), Layout and caches
-/layout/*
+
+## cambrian exludes ##
+
+#cambrian - Page Content (except docs)
 /pages/*/*
 !/pages/docs/*
-/public/css/*
 
-#temporary exclude
+#cambrian - Page Layout
+/layout/html/*
+/layout/css/*
+/layout/img/*
+/layout/js/*
+
+#cambrian - Cache
+/public/css/*
+/public/html/*
+/public/img/*
+
+#cambrian - temporary exclude
 /vendor/css-crush/*
