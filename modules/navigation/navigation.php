@@ -2,7 +2,24 @@
 class CambrianNavigationModule
 {
 
-  public static function createArray($add) {
+  public static function create($links) {
+    $result = [];
+    $pages = self::getArray();
+    foreach($links as $link) {
+      if(isset($link['page']))
+      {
+        if(isset($pages[$link['page']])) {
+          $result[] = $pages[$link['page']];
+        }
+      } else {
+        $result[] = $link;
+      }
+    }
+
+    return $result;
+  }
+
+  public static function getArray() {
     $result = [];
     $pages = CambrianFiles::readDir('../pages');
     foreach($pages as $key=>$value) {
@@ -10,7 +27,7 @@ class CambrianNavigationModule
         $content = CambrianFiles::readDir('../pages/'.$key);
         foreach($content as $k=>$v) {
           if($k == 'content.html') {
-            $result[] = [
+            $result[$key] = [
               'href'=>'/'.$key,
               'title'=>$key
             ];
@@ -19,7 +36,6 @@ class CambrianNavigationModule
       }
     }
 
-    $result = array_merge($add,$result);
     return $result;
   }
 }
