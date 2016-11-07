@@ -26,11 +26,27 @@ Class CambrianConfig extends Cambrian
     } elseif($m == 'all') {
       $m = [];
       // @todo load modules from folders available in /modules
-      $this->readdirectory('../modules');
-      $m = ['csscrush','email','form','navigation'];
+      $installed = $this->readdirectory('../modules');
+      foreach($installed as $module => $data) {
+        if($data['type'] == 'dir') {
+          $m[] = $module;
+        }
+      }
     }
 
+    $this->loadModules($m);
     return $m;
+  }
+
+  function loadModules($m) {
+    foreach($m as $module) {
+      if($module != 'core') {
+        $file = '../modules/'.$module.'/'.$module.'.php';
+        if(file_exists($file)) {
+          require_once $file;
+        }
+      }
+    }
   }
 
   function processConfig($file) {
@@ -69,9 +85,10 @@ Class CambrianConfig extends Cambrian
           }
         }
 
-        print_r($results);
         closedir($handle);
       }
     }
+
+    return $results;
   }
 }
