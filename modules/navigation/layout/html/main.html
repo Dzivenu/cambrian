@@ -1,12 +1,14 @@
 <nav id="nav_id" class="mod-nav">
   <ul>
-    <?php $pages = []; foreach ($pages as $page): ?>
+    <?php 
+    $this->data['navigation']['pages'] = CambrianNavigationModule::createArray([['href'=>'/whitepaper.pdf','title'=>'Whitepaper','external'=>true]]); 
+    foreach($this->data['navigation']['pages'] as $page): ?>
     <li>
       <?php if ($page['href'] === null): ?>
         <span class="active"><?= $page['title'] ?></span>
       <?php else: ?>
         <a href="<?= $page['href']?>"<?php
-          if($page['external'])
+          if(isset($page['external']) && $page['external'])
             echo 'target="_blank"';
           echo '>';
           echo $page['title'];

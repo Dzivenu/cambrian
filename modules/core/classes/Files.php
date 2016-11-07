@@ -15,7 +15,7 @@ class CambrianFiles
             if(is_dir($path.'/'.$file)) {
               $results[$file]['type'] = 'dir';
             } else {
-              $results[$file]['type'] = filetype($file);
+              @$results[$file]['type'] = filetype($file);
             }
           }
         }

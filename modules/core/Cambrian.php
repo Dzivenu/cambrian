@@ -17,11 +17,14 @@ class Cambrian
     require_once('classes/View.php');
     $v = new CambrianView();
     $v->parse();
+    
+    if(isset($_GET['url']) {
+      print_r($_GET['url']);
+    }
   }
 
   public function debug($message)
   {
-    print_r($this->config);
     if($this->config['debug']) {
       print_r($message);
     }
