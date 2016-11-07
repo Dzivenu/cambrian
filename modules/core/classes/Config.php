@@ -26,6 +26,7 @@ Class CambrianConfig extends Cambrian
     } elseif($m == 'all') {
       $m = [];
       // @todo load modules from folders available in /modules
+      $this->readdirectory('../modules');
       $m = ['csscrush','email','form','navigation'];
     }
 
@@ -45,7 +46,26 @@ Class CambrianConfig extends Cambrian
     } else {
       $this->config['modules'] = $this->setModules($modules);
     }
-    
+
     return $this->config;
+  }
+
+  public function readdirectory($path) {
+    if(is_dir($path))
+    {
+      if($handle = opendir($path))
+      {
+        while(($file = readdir($handle)) !== false)
+        {
+          echo "<li>File: ";
+          echo $file;
+
+          echo "<ul><li>Type: ";
+          echo is_dir($file);
+          echo "</li></ul>\n";
+        }
+        closedir($handle);
+      }
+    }
   }
 }

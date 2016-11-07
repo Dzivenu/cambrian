@@ -2,7 +2,7 @@
 Class CambrianView
 {
 
-  private $data = []
+  private $data = [];
 
   public function parse() {
     $this->includeFile('mod_core_base');
