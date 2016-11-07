@@ -11,6 +11,11 @@ Class CambrianView
   }
 
   public function includeFile($file,$d = []) {
+    $this->data = array_merge($this->data,$d);
+    include $this->getFile($file);
+  }
+
+  public function getFile($file) {
     $target = explode('_',$file);
     $filetypes = ['html'];
     foreach($filetypes as $type) {
@@ -19,9 +24,9 @@ Class CambrianView
         $modulefile = '../modules/'.$target[1].'/layout/'.$type.'/'.$target[2].'.'.$type;
         $this->data = array_merge($this->data,$d);
         if(file_exists($userfile)) {
-          include $userfile;
+          return $userfile;
         } elseif(file_exists($modulefile)) {
-          include $modulefile;
+          return $modulefile;
         }
       }
     }
@@ -38,7 +43,7 @@ Class CambrianView
     {
       $content = file_get_contents('../pages'.$path.'/content.html');
     } else {
-      $content = $this->includeFile('mod_core_404');
+      $content = file_get_contents($this->getFile('mod_core_404'));
     }
     return $content;
   }
