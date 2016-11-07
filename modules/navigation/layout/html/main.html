@@ -10,7 +10,7 @@
     );
     foreach($this->data['navigation']['pages'] as $page): ?>
     <li>
-      <?php if ($page['href'] === null): ?>
+      <?php if ($page['href'] === $this->data['url']): ?>
         <span class="active"><?= $page['title'] ?></span>
       <?php else: ?>
         <a href="<?= $page['href']?>"<?php

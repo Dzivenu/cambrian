@@ -6,6 +6,7 @@ Class CambrianView
   private $data = [];
 
   public function parse($url = '/home') {
+    $this->data['url'] = $url;
     $this->includeFile('mod_core_base',['content'=>$this->getContent($url)]);
     return true;
   }

@@ -21,6 +21,7 @@ class Cambrian
     } else {
       $param = $_GET['url'];
     }
+
     $v->parse($param);
   }
 
