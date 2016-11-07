@@ -137,4 +137,4 @@ $RECYCLE.BIN/
 /public/img/*
 
 #cambrian - temporary exclude
-/vendor/css-crush/*
+/vendors/css-crush/*
