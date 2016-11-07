@@ -124,6 +124,7 @@ $RECYCLE.BIN/
 #cambrian - Page Content (except docs)
 /pages/*/*
 !/pages/home/*
+!/pages/docs/*
 
 #cambrian - Page Layout
 /layout/html/*
