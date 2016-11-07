@@ -7,9 +7,10 @@ class Cambrian
     'modules'=>['core','navigation']
   ];
 
-  public function __construct($request)
+  public function __construct($configFile = 'main')
   {
     global $config;
+    $this->processConfig($configFile);
   }
 
   function setDebug($d) {
@@ -21,36 +22,42 @@ class Cambrian
       error_reporting(0);
     }
 
-    $config['debug'] = $d;
     return $d;
   }
 
   function setModules($m) {
     if(empty($m) || $m == []) {
-      $m = $config['modules'];
+      $m = $this->config['modules'];
     } elseif($m == 'all') {
       $m = [];
       // @todo load modules from folders available in /modules
       $m = ['csscrush','email','form','navigation'];
     }
 
-    $config['modules'] = $m;
     return $m;
   }
 
-  function processConfig($file = 'main') {
+  function processConfig($file) {
       require_once '../config/'.$file.'.php';
 
     if(!isset($debug)) {
   		$debug = 0;
   	}
-  	$debug = $this->setDebug($debug);
+  	$this->config['debug'] = $this->setDebug($debug);
 
   	if(!isset($modules)) {
-  	  $modules = 'core';
-  	}
-  	$modules = $this->setModules($modules);
+  	  $modules = $this->config['modules'];
+  	} else {
+  	  $this->config['modules'] = $this->setModules($modules);
+    }
 
-    print_r($modules);
+    $this->debug($this->config);
+  }
+
+  function debug($message)
+  {
+    if($this->config['debug']) {
+      print_r($message);
+    }
   }
 }

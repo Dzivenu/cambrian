@@ -1,11 +1,16 @@
 <nav id="nav_id" class="mod-nav">
   <ul>
-    <?php foreach ($this->pages as $page): ?>
+    <?php $pages = [['href'=>'/whitepaper','title'=>'Whitepaper','external'=>true]]; foreach ($pages as $page): ?>
     <li>
       <?php if ($page['href'] === null): ?>
         <span class="active"><?= $page['title'] ?></span>
       <?php else: ?>
-        <a href="<?= $page['href']?>" <?php if($page['external']){echo 'target="_blank"';}?>><?= $page['title'] ?></a>
+        <a href="<?= $page['href']?>"<?php
+          if($page['external'])
+            echo 'target="_blank"';
+          echo '>';
+          echo $page['title'];
+        ?></a>
       <?php endif; ?>
 
     </li>
