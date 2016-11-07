@@ -16,11 +16,12 @@ class Cambrian
 
     require_once('classes/View.php');
     $v = new CambrianView();
-    $v->parse();
-
-    if(isset($_GET['url'])) {
-      print_r($_GET['url']);
+    if(!isset($_GET['url'])) {
+      $param = '/home';
+    } else {
+      $param = $_GET['url'];
     }
+    $v->parse($param);
   }
 
   public function debug($message)
