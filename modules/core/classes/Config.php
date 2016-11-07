@@ -51,19 +51,25 @@ Class CambrianConfig extends Cambrian
   }
 
   public function readdirectory($path) {
+    $results = [];
     if(is_dir($path))
     {
       if($handle = opendir($path))
       {
         while(($file = readdir($handle)) !== false)
         {
-          echo "<li>File: ";
-          echo $file;
-
-          echo "<ul><li>Type: ";
-          echo is_dir($file);
-          echo "</li></ul>\n";
+          $exclude = ['.','..'];
+          if(!in_array($file, $exclude)) {
+            $results[$file] = [];
+            if(is_dir($path.'/'.$file)) {
+              $results[$file]['type'] = 'dir';
+            } else {
+              $results[$file]['type'] = filetype($file);
+            }
+          }
         }
+
+        print_r($results);
         closedir($handle);
       }
     }
