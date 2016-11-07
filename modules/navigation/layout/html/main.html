@@ -1,6 +1,6 @@
 <nav id="nav_id" class="mod-nav">
   <ul>
-    <?php $pages = [['href'=>'/docs','title'=>'Docs','external'=>true]]; foreach ($pages as $page): ?>
+    <?php $pages = []; foreach ($pages as $page): ?>
     <li>
       <?php if ($page['href'] === null): ?>
         <span class="active"><?= $page['title'] ?></span>

@@ -4,7 +4,7 @@ class Cambrian
 
   private $config = [
     'debug'=>false,
-    'modules'=>['core','navigation']
+    'modules'=>[]
   ];
 
   public function __construct($configFile = 'main')
