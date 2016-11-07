@@ -4,6 +4,7 @@
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
   # redirect index.html and home to the root domain
+  RewriteRule ^(.*)index\.(php|html?)$ /$1 [R=301,NC,L]
   #RewriteRule ^index\.html$ / [NC,R,L]
   #RewriteRule ^home$ / [NC,R,L]
   #redirect everything else to index.php with url param
