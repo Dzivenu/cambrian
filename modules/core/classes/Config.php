@@ -1,5 +1,5 @@
 <?php
-Class CambrianConfig
+Class CambrianConfig extends Cambrian
 {
 
   private $config = [];
@@ -45,7 +45,7 @@ Class CambrianConfig
     } else {
       $this->config['modules'] = $this->setModules($modules);
     }
-
+    
     return $this->config;
   }
 }
