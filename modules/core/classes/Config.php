@@ -1,5 +1,5 @@
 <?php
-Class CambrianConfig extends Cambrian
+Class CambrianConfig
 {
 
   private $config = [];
