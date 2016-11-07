@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+
+    </title>
+</head>
+<body>
+
+<header id="header">
+    <div class="inside">
+
+        <?php
+            /*
+             *  navgedöns(id,$params)
+             *  id = postfix für navtemplate (nav_id.html), sowie die <nav id="nav_id" class="mod-nav">
+             *  $params: <a href="$value">$key</a>
+             *
+             */
+            navgedöns('main', $params = [
+                    'Home' => '/',
+                    'Download cambrian' => 'https://github.com/pharesim/cambrian'
+            ])
+        ?>
+    </div>
+</header>
