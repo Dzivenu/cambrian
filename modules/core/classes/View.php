@@ -22,7 +22,6 @@ Class CambrianView
       $userfile = '../layout/html/'.$file.'.'.$type;
       if($target[0] == 'mod') {
         $modulefile = '../modules/'.$target[1].'/layout/'.$type.'/'.$target[2].'.'.$type;
-        $this->data = array_merge($this->data,$d);
         if(file_exists($userfile)) {
           return $userfile;
         } elseif(file_exists($modulefile)) {
