@@ -19,7 +19,7 @@ class Cambrian
     if(!isset($_GET['url'])) {
       $param = '/home';
     } else {
-      $param = $_GET['url'];
+      $param = '/'.$_GET['url'];
     }
 
     $v->parse($param);
