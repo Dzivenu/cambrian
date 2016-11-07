@@ -1,12 +1,14 @@
 <IfModule mod_rewrite.c>
+  Options -Indexes
   RewriteEngine On
-  # check if file exists 
+  
+  # redirect index.html and home to the root domain
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
-  # redirect index.html and home to the root domain
-  #RewriteRule ^(.*)index\.(php|html?)$ /$1 [R=301,NC,L]
-  #RewriteRule ^index\.html$ / [NC,R,L]
-  #RewriteRule ^home$ / [NC,R,L]
+  RewriteRule ^(.*)(index\.html|home?)$ /$1 [R=301,NC,L]
+
   #redirect everything else to index.php with url param
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
 </IfModule>
