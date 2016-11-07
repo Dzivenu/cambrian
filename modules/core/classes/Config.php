@@ -1,5 +1,5 @@
 <?php
-Class CambrianConfig
+Class CambrianConfig extends Cambrian
 {
 
   private $config = [];
@@ -33,7 +33,7 @@ Class CambrianConfig
   }
 
   function processConfig($file) {
-      require_once '../config/'.$file.'.php';
+    require_once '../config/'.$file.'.php';
 
     if(!isset($debug)) {
       $debug = 0;
@@ -47,6 +47,5 @@ Class CambrianConfig
     }
 
     return $this->config;
-    $this->debug($this->config);
   }
 }

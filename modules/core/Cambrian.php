@@ -15,7 +15,7 @@ class Cambrian
     $this->config = $c->processConfig($configFile);
   }
 
-  function debug($message)
+  public function debug($message)
   {
     if($this->config['debug']) {
       print_r($message);
