@@ -17,7 +17,7 @@ class Cambrian
     require_once('classes/View.php');
     $v = new CambrianView();
     if(!isset($_GET['url'])) {
-      $param = '/kg';
+      $param = '/home';
     } else {
       $param = $_GET['url'];
     }
