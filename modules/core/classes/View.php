@@ -32,7 +32,7 @@ Class CambrianView
     foreach($url as $snip) {
       $path .= '/'.$snip;
     }
-    print_r($path);
+    
     if(file_exists('../pages'.$path.'/content.html'))
     {
       $content = file_get_contents('../pages'.$path.'/content.html');
