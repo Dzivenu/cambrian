@@ -12,16 +12,9 @@
     <div class="inside">
 
         <?php
-            /*
-             *  build_nav(id,$params)
-             *  id = postfix for nav template (nav_id.html), also for the inner html <nav id="nav_id" class="mod-nav">
-             *  $params: <a href="$value">$key</a>; if $value contains an absolute url add a target="_blank" to inner html
-             *
-             */
-            // build_nav('main', $params = [
-            //        'Home' => '/',
-            //        'Download cambrian' => 'https://github.com/pharesim/cambrian'
-            //])
+        /*parse the page*/
+        include '../modules/navigation/layout/html/nav_main.html';
         ?>
+
     </div>
 </header>
