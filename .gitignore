@@ -123,3 +123,6 @@ $RECYCLE.BIN/
 /pages/*/*
 !/pages/docs/*
 /public/css/*
+
+#temporary exclude
+/vendor/css-crush/*
