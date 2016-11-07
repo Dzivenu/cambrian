@@ -38,7 +38,7 @@ Class CambrianView
     {
       $content = file_get_contents('../pages'.$path.'/content.html');
     } else {
-      $content = $this->getContent($this->home);
+      $content = 'FILE NOT FOUND';
     }
     return $content;
   }
