@@ -5,7 +5,7 @@
       <?php if ($page['href'] === null): ?>
         <span class="active"><?= $page['title'] ?></span>
       <?php else: ?>
-        <a href="<?= $page['href']?>" <?php if($page['external']){echo 'target="_blank"'};?>><?= $page['title'] ?></a>
+        <a href="<?= $page['href']?>" <?php if($page['external']){echo 'target="_blank"';}?>><?= $page['title'] ?></a>
       <?php endif; ?>
 
     </li>
