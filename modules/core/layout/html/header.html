@@ -13,12 +13,12 @@
 
         <?php
             /*
-             *  navgedöns(id,$params)
-             *  id = postfix für navtemplate (nav_id.html), sowie die <nav id="nav_id" class="mod-nav">
-             *  $params: <a href="$value">$key</a>
+             *  build_nav(id,$params)
+             *  id = postfix for nav template (nav_id.html), also for the inner html <nav id="nav_id" class="mod-nav">
+             *  $params: <a href="$value">$key</a>; if $value contains an absolute url add a target="_blank" to inner html
              *
              */
-            navgedöns('main', $params = [
+             build_nav('main', $params = [
                     'Home' => '/',
                     'Download cambrian' => 'https://github.com/pharesim/cambrian'
             ])
