@@ -2,7 +2,7 @@
 Class CambrianConfig
 {
 
-  private $config = [];
+  public $config = ['modules'=>[]];
 
   public function __construct($config) {
     $this->config = $config;
@@ -39,12 +39,13 @@ Class CambrianConfig
 
   function loadModules($m) {
     $loaded = [];
-    foreach($m as $module) {
+    foreach($m as $module=>$params) {
       if($module != 'core') {
         $file = '../modules/'.$module.'/'.$module.'.php';
         if(file_exists($file)) {
+          $loaded[$module] = $params;
+          $this->config['modules'] = $loaded;
           require_once $file;
-          $loaded[] = $module;
         }
       }
     }
@@ -62,9 +63,8 @@ Class CambrianConfig
 
     if(!isset($modules)) {
       $modules = $this->config['modules'];
-    } else {
-      $this->config['modules'] = $this->setModules($modules);
     }
+    $this->config['modules'] = $this->setModules($modules);
 
     return $this->config;
   }

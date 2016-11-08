@@ -1,4 +1,10 @@
 <?php
-require_once '../vendors/css-crush/CssCrush.php';
+class CambrianCSSCrush
+{
+  public function __construct($params) {
+    csscrush_file($params['input_file'],['output_dir'=>$params['output_dir'],'output_file'=>$params['output_file']]);
+  }
+}
 
-csscrush_file('../layout/css/main.css',['output_dir'=>'../public/css','output_file'=>'style']);
+require_once '../vendors/css-crush/CssCrush.php';
+$cssc = new CambrianCSSCrush($this->config['modules']['csscrush']););
