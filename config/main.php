@@ -13,7 +13,7 @@ $debug = 1;
 $modules = [
   'navigation'=>[1],
   'csscrush'=>[
-    'input_file'=>'../layout/css/main.css',
+    'input_file'=>'../modules/csscrush/layout/css/main.css',
     'output_dir'=>'../public/css',
     'output_file'=>'style'
   ]
