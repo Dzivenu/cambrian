@@ -1,6 +1,5 @@
 <?php
-# debug mode (bool)
-$debug = 1;
+#$debug = 1;
 
 /**
  * active modules 
@@ -18,3 +17,5 @@ $modules = [
     'output_file'=>'style'
   ]
 ];
+
+#$layout = 'mod_core_base';

@@ -2,7 +2,7 @@
 Class CambrianConfig
 {
 
-  public $config = ['modules'=>[]];
+  public $config = [];
 
   public function __construct($config) {
     $this->config = $config;
@@ -57,14 +57,19 @@ Class CambrianConfig
     require_once '../config/'.$file.'.php';
 
     if(!isset($debug)) {
-      $debug = 0;
+      $debug = 1;
     }
     $this->config['debug'] = $this->setDebug($debug);
 
     if(!isset($modules)) {
-      $modules = $this->config['modules'];
+      $modules = [];
     }
     $this->config['modules'] = $this->setModules($modules);
+
+    if(!isset($layout)) {
+      $layout = 'mod_core_base';
+    }
+    $this->config['layout'] = $layout;
 
     return $this->config;
   }
