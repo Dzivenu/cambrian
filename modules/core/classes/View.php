@@ -5,6 +5,7 @@ Class View
 {
 
   public $home = '/home';
+  private $pageConfig = [];
   private $data = [];
 
   public function __construct($config) {
@@ -13,16 +14,23 @@ Class View
 
   public function parse($url = '/home') {
     $this->data['url'] = $url;
-    $this->includeFile($this->data['config']['layout'],['content'=>$this->getContent($url)]);
+    $this->pageConfig = $this->getPageConfig($url);
+    $this->includeFile(
+      $this->data['config']['layout'],
+      [
+        'content'=>$this->getPageContent($url),
+        'pageconfig'=>$this->pageConfig
+      ]
+    );
     return true;
   }
 
   public function includeFile($file,$d = []) {
-    $this->data = array_merge($this->data,$d);
+    $this->data = array_merge($d,$this->data);
     include $this->getFile($file);
   }
 
-  public function getFile($file) {
+  private function getFile($file) {
     $path = explode('/',$file);
     $len = count($path);
     if($len == 1) {
@@ -54,7 +62,43 @@ Class View
     }
   }
 
-  public function getContent($url) {
+  private function getPageContent($url) {
+    $path = $this->getPath($url);
+    if(file_exists('../pages'.$path.'/content.html'))
+    {
+      $content = file_get_contents('../pages'.$path.'/content.html');
+    } else {
+      $content = file_get_contents($this->getFile('mod_core_404'));
+    }
+
+    return $content;
+  }
+
+  private function getPageConfig($url) {
+    $path = $this->getPath($url);
+    $config = [];
+    if(file_exists('../pages'.$path.'/config.php'))
+    {
+      include('../pages'.$path.'/config.php');
+      
+      if(isset($metadata)) {
+        $config['metadata'] = $metadata;
+      }
+
+      if(isset($wrapperTemplate)) {
+        $config['wrapperTemplate'] = $wrapperTemplate;
+      }
+
+      if(isset($bodyClass)) {
+        $config['bodyClass'] = $bodyClass;
+      }
+    }
+
+    return $config;
+  }
+
+  private function getPath($url)
+  {
     $url = explode('/',$url);
     $path = '';
     foreach($url as $snip) {
@@ -63,13 +107,6 @@ Class View
       }
     }
 
-    if(file_exists('../pages'.$path.'/content.html'))
-    {
-      $content = file_get_contents('../pages'.$path.'/content.html');
-    } else {
-      $content = file_get_contents($this->getFile('mod_core_404'));
-    }
-    return $content;
+    return $path;
   }
-
 }

@@ -1,5 +1,12 @@
 <?php 
-$this->includeFile('mod_core_header'); 
-$this->includeFile('mod_core_wrapper');
+$this->includeFile('mod_core_header');
+
+$wrapper = 'mod_core_wrapper';
+if(isset($this->data['pageconfig']['wrapperTemplate']) && !empty($this->data['pageconfig']['wrapperTemplate'])) {
+  $wrapper = $this->data['pageconfig']['wrapperTemplate'];
+}
+
+$this->includeFile($wrapper);
+
 $this->includeFile('mod_core_footer');
 ?>
