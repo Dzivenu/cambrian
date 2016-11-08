@@ -23,10 +23,24 @@ Class View
   }
 
   public function getFile($file) {
+    $path = explode('/',$file);
+    $len = count($path);
+    if($len == 1) {
+      $path = '';
+    } else {
+      $tmp = '';
+      for($i = 0; $i < $len-1; $i++)
+      {
+        $tmp .= $path[$i].'/';
+      }
+
+      $file = $path[$len-1];
+      $path = $tmp;
+    }
     $target = explode('_',$file);
     $filetypes = ['html'];
     foreach($filetypes as $type) {
-      $userfile = '../layout/html/'.$file.'.'.$type;
+      $userfile = '../layout/html/'.$path.$file.'.'.$type;
       if($target[0] == 'mod') {
         $modulefile = '../modules/'.$target[1].'/layout/'.$type.'/'.$target[2].'.'.$type;
         if(file_exists($userfile)) {
