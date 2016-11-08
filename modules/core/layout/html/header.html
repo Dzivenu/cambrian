@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <?php if(isset($this->data['pageconfig']['metadata'])): 
-        foreach($this->data['pageconfig']['metadata'] as $meta=>$content): ?>
-    <meta name="<?=$meta?>" content="<?=$content?>">
-        <?php endforeach;
+    <meta charset="UTF-8"><?php
+    if(isset($this->data['pageconfig']['metadata'])): 
+        foreach($this->data['pageconfig']['metadata'] as $meta=>$content):
+            echo "\n".'    <meta name="'.$meta.'" content="'.$content.'">';
+        endforeach;
     endif; ?>
-    <title>
-        <?php if(isset($this->data['pageconfig']['pageTitle'])) echo $this->data['pageconfig']['pageTitle']; ?>
-    </title>
+
+    <title><?php
+        if(isset($this->data['pageconfig']['pageTitle'])) echo $this->data['pageconfig']['pageTitle'];
+    ?></title>
 </head>
 <body<?php if(isset($this->data['pageconfig']['bodyClass'])) echo ' class="'.$this->data['pageconfig']['bodyClass'].'"'; ?>>
 
-<header id="header">
+    <header id="header">
     <div class="container">
         <div class="row">
             <?php
@@ -33,4 +34,4 @@
             ?>
         </div>
     </div>
-</header>
+    </header>

@@ -81,16 +81,10 @@ Class View
     {
       include('../pages'.$path.'/config.php');
       
-      if(isset($metadata)) {
-        $config['metadata'] = $metadata;
-      }
-
-      if(isset($wrapperTemplate)) {
-        $config['wrapperTemplate'] = $wrapperTemplate;
-      }
-
-      if(isset($bodyClass)) {
-        $config['bodyClass'] = $bodyClass;
+      if(isset($pageconfig)) {
+        foreach($pageconfig as $key=>$value) {
+          $config[$key] = $value;
+        }
       }
     }
 
