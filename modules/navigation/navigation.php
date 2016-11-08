@@ -41,4 +41,3 @@ class CambrianNavigationModule
     return $result;
   }
 }
-print_r($this->config);
