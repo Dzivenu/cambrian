@@ -1,5 +1,7 @@
 <?php
-class CambrianFiles
+namespace Cambrian;
+
+class Files
 {
   public static function readDir($path) {
     $results = [];

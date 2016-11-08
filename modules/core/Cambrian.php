@@ -1,4 +1,6 @@
 <?php
+namespace Cambrian;
+
 class Cambrian
 {
 
@@ -11,11 +13,11 @@ class Cambrian
   {
     require_once 'classes/Config.php';
     require_once 'classes/Files.php';
-    $c = new CambrianConfig($this->config);
+    $c = new Config($this->config);
     $this->config = $c->processConfig($configFile);
 
     require_once('classes/View.php');
-    $v = new CambrianView($this->config);
+    $v = new View($this->config);
     if(!isset($_GET['url'])) {
       $param = '/home';
     } else {

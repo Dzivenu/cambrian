@@ -1,5 +1,7 @@
 <?php
-Class CambrianView
+namespace Cambrian;
+
+Class View
 {
 
   public $home = '/home';

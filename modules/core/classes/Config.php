@@ -1,5 +1,7 @@
 <?php
-Class CambrianConfig
+namespace Cambrian;
+
+Class Config
 {
 
   public $config = [];
