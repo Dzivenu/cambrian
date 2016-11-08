@@ -43,7 +43,7 @@ Class Config
     $loaded = [];
     foreach($m as $module=>$params) {
       if($module != 'core') {
-        $file = '../modules/'.$module.'/'.$module.'.php';
+        $file = '../modules/'.$module.'/'.ucfirst($module).'.php';
         if(file_exists($file)) {
           $loaded[$module] = $params;
           $this->config['modules'] = $loaded;

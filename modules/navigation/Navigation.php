@@ -1,7 +1,7 @@
 <?php
-namespace Cambrian;
+namespace Cambrian\Modules;
 
-class NavigationModule
+class Navigation
 {
   public $pages = [];
 
@@ -25,10 +25,10 @@ class NavigationModule
 
   private function getArray() {
     $result = [];
-    $pages = Files::readDir('../pages');
+    $pages = \Cambrian\Files::readDir('../pages');
     foreach($pages as $key=>$value) {
       if($value['type'] == 'dir') {
-        $content = Files::readDir('../pages/'.$key);
+        $content = \Cambrian\Files::readDir('../pages/'.$key);
         foreach($content as $k=>$v) {
           if($k == 'content.html') {
             $result[$key] = [
