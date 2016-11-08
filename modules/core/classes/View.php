@@ -5,6 +5,10 @@ Class CambrianView
   public $home = '/home';
   private $data = [];
 
+  public function __construct($config) {
+    $this->data['config'] = $config;
+  }
+
   public function parse($url = '/home') {
     $this->data['url'] = $url;
     $this->includeFile('mod_core_base',['content'=>$this->getContent($url)]);

@@ -15,7 +15,7 @@ class Cambrian
     $this->config = $c->processConfig($configFile);
 
     require_once('classes/View.php');
-    $v = new CambrianView();
+    $v = new CambrianView($this->config);
     if(!isset($_GET['url'])) {
       $param = '/home';
     } else {

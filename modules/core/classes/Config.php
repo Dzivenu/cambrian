@@ -34,19 +34,22 @@ Class CambrianConfig
       }
     }
 
-    $this->loadModules($m);
-    return $m;
+    return $this->loadModules($m);
   }
 
   function loadModules($m) {
+    $loaded = [];
     foreach($m as $module) {
       if($module != 'core') {
         $file = '../modules/'.$module.'/'.$module.'.php';
         if(file_exists($file)) {
           require_once $file;
+          $loaded[] = $module;
         }
       }
     }
+
+    return $loaded;
   }
 
   function processConfig($file) {
