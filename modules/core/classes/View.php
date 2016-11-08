@@ -40,7 +40,9 @@ Class CambrianView
     $url = explode('/',$url);
     $path = '';
     foreach($url as $snip) {
-      $path .= '/'.$snip;
+      if($snip != '..') {
+        $path .= '/'.$snip;
+      }
     }
 
     if(file_exists('../pages'.$path.'/content.html'))
