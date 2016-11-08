@@ -2,7 +2,7 @@
 class Cambrian
 {
 
-  private $config = [
+  public $config = [
     'debug'=>false,
     'modules'=>[]
   ];
