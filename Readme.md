@@ -7,7 +7,7 @@ It serves static HTML pages from `/pages/$url/content.html` at `/$url`
 ## Usage
 edit `/config/main.php` according to your needs
 
-Set up the layout and use `<?= $this->data['content'] ?>` for the content
+Set up the layout by overwriting files from the core module, use `<?= $this->data['content'] ?>` for the content
 
 Overwrite any file from a module's `./layout/html/` using an own file analog to `/layout/html/mod_core_footer.html`
 
