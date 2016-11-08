@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             <?php
-            if(in_array('navigation',$this->data['config']['modules'])) { 
+            if(array_key_exists('navigation',$this->data['config']['modules'])) { 
               $this->includeFile(
                 'mod_navigation_main',
                 [

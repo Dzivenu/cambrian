@@ -7,4 +7,4 @@ class CambrianCSSCrush
 }
 
 require_once '../vendors/css-crush/CssCrush.php';
-$cssc = new CambrianCSSCrush($this->config['modules']['csscrush']););
+$cssc = new CambrianCSSCrush($this->config['modules']['csscrush']);
