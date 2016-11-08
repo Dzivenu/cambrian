@@ -3,12 +3,13 @@
 Cambrian is a file-system based modular CMS
 It serves static HTML pages from `/pages/$url/content.html` at `/$url`
 
+## Usage
+edit `/config/main.php` according to your needs
+
 Set up the layout and use `<?= $this->data['content'] ?>` for the content
 
 Overwrite any file from a module's `./layout/html/` using an own file analog to `/layout/html/mod_core_footer.html`
 
-## Usage
-edit `/config/main.php` according to your needs
 add some folders for pages containing content files, analog to `/pages/home`
 
 ## Current module set
