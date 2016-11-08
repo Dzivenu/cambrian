@@ -22,4 +22,4 @@ add some folders for pages containing content files, analog to `/pages/home`
   - pages: see `/modules/core/layout/html/header.html` for example use 
 
 ### csscrush
-  - depends on `/vendors/css-crush`
+  - depends on `/vendors/css-crush`, included in git submodules
