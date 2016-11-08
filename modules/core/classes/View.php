@@ -47,6 +47,8 @@ Class View
           return $userfile;
         } elseif(file_exists($modulefile)) {
           return $modulefile;
+        } else {
+          return $this->getFile('mod_core_404');
         }
       }
     }
