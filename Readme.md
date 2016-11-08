@@ -1,6 +1,7 @@
 # cambrian
 
 Cambrian is a file-system based modular CMS
+
 It serves static HTML pages from `/pages/$url/content.html` at `/$url`
 
 ## Usage
