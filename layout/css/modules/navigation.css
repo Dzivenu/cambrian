@@ -1,0 +1,89 @@
+/**
+ * Pevo.science - css by Alexander Drichel - alex@pevo.science
+ * Based on Crush - the-echoplex.net/csscrush/
+ *
+ * Description: Navigation styling
+ *
+ */
+
+/* ==========================================================================
+   Base navigation
+   ========================================================================== */
+
+.mod-navigation {
+    overflow: hidden;
+}
+
+.mod-navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    display: block;
+}
+
+.mod-navigation ul li {
+    display: block;
+    text-align: center;
+}
+
+.mod-navigation ul li :any(a,span){
+    display: block;
+    padding: 10px 0;
+    line-height: 28px;
+    font-size: 1.5em;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+/* ==========================================================================
+   Main navigation
+   ========================================================================== */
+
+#main_navigation :any(a,span){
+    font-family: $(base-font);
+    font-weight: 500;
+}
+
+#main_navigation ul {
+    padding-top: 10px;
+}
+
+/* ==========================================================================
+   Media queries
+   ========================================================================== */
+
+/* small */
+@media screen and ($(small)) {
+
+    #main_navigation li {
+    width: 33%; /*defined by the number*/
+    float: left;
+}
+}
+
+/* medium */
+@media screen and ($(medium)) {
+
+}
+
+/* large */
+@media screen and ($(large)) {
+    #main_navigation {
+    width: 50%;
+    float: right;
+}
+
+    #main_navigation ul {
+        padding-top: 0;
+}
+    #main_navigation ul :any(a,span){
+        text-align: right;
+}
+}
+
+/* xlarge */
+@media screen and ($(xlarge)) {
+
+}

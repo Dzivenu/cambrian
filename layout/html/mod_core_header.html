@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+<header id="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <a class="block" href="/">
+                    <img src="/img/pevo_logo.svg" alt="pevo - decentralized open access and evaluation">
+                </a>
+            </div>
+            <div class="col-10">
+                <?php $this->includeFile(
+                    'mod_navigation_main',
+                    [
+                        'pages'=>[
+                            ['page'=>'home'],
+                            ['page'=>'docs'],
+                            ['external'=>true,'href'=>'https://github.com/pharesim/cambrian','title'=>'fork it']
+                        ]
+                    ]
+                ); ?>
+            </div>
+        </div>
+
+    </div>
+</header>

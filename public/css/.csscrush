@@ -1,0 +1,105 @@
+{
+    "main.css": {
+        "imports": [
+            "vendors\/normalize.css",
+            "vendors\/grid.css",
+            "config\/variables.css",
+            "modules\/typography.css",
+            "modules\/form.css",
+            "modules\/navigation.css",
+            "modules\/base.css",
+            "modules\/helper.css",
+            "modules\/media-queries.css"
+        ],
+        "datem_sum": 14785468673,
+        "options": {
+            "output_dir": "..\/public\/css",
+            "minify": true,
+            "formatter": null,
+            "versioning": true,
+            "boilerplate": true,
+            "vars": [],
+            "cache": true,
+            "context": null,
+            "output_file": null,
+            "asset_dir": null,
+            "doc_root": null,
+            "vendor_target": "all",
+            "rewrite_import_urls": true,
+            "plugins": null,
+            "settings": [],
+            "stat_dump": false,
+            "source_map": false,
+            "newlines": "use-platform"
+        }
+    },
+    "styles.css": {
+        "imports": [
+            "config\/variables.css",
+            "config\/grid-config.css",
+            "vendors\/normalize.css",
+            "vendors\/grid.css",
+            "modules\/typography.css",
+            "modules\/form.css",
+            "modules\/navigation.css",
+            "modules\/base.css",
+            "modules\/helper.css",
+            "modules\/media-queries.css"
+        ],
+        "datem_sum": 16264120631,
+        "options": {
+            "output_dir": "..\/public\/css",
+            "output_file": "styles",
+            "minify": false,
+            "versioning": false,
+            "formatter": null,
+            "boilerplate": true,
+            "vars": [],
+            "cache": true,
+            "context": null,
+            "asset_dir": null,
+            "doc_root": null,
+            "vendor_target": "all",
+            "rewrite_import_urls": true,
+            "plugins": null,
+            "settings": [],
+            "stat_dump": false,
+            "source_map": false,
+            "newlines": "use-platform"
+        }
+    },
+    "style.css": {
+        "imports": [
+            "config\/variables.css",
+            "config\/grid-config.css",
+            "vendors\/normalize.css",
+            "vendors\/grid.css",
+            "modules\/typography.css",
+            "modules\/form.css",
+            "modules\/navigation.css",
+            "modules\/base.css",
+            "modules\/helper.css"
+        ],
+        "datem_sum": 14785632636,
+        "options": {
+            "output_dir": "..\/public\/css",
+            "output_file": "style",
+            "minify": true,
+            "formatter": null,
+            "versioning": true,
+            "boilerplate": true,
+            "vars": [],
+            "cache": true,
+            "context": null,
+            "asset_dir": null,
+            "doc_root": null,
+            "vendor_target": "all",
+            "rewrite_import_urls": true,
+            "plugins": null,
+            "settings": [],
+            "stat_dump": false,
+            "source_map": false,
+            "newlines": "use-platform"
+        }
+    }
+}

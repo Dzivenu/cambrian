@@ -1,0 +1,85 @@
+/**
+ * Pevo.science - css by Alexander Drichel - alex@pevo.science
+ * Based on Crush - the-echoplex.net/csscrush/
+ *
+ * Description: Base Layout
+ *
+ */
+
+/* ==========================================================================
+   Generic
+   ========================================================================== */
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    background: $(white);
+    color: $(black);
+    font-family: $(base-font);
+    font-size: 15px;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+#header a {
+    display: block;
+}
+
+#header {
+    background-color: #fff;
+}
+
+#header > .container{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    /*border-bottom: 3px solid $(light-blue1);*/
+}
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+.jumbo {
+    background: $(green1);
+    color: $(white);
+    width: 100%;
+    padding: 0 0 30px;
+}
+
+.jumbo.petrol {
+    background: $(petrol1);
+}
+
+.jumbo.magenta {
+    background: $(magenta1);
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+
+/* small */
+@media screen and ($(small)) {
+
+
+}
+
+/* medium */
+@media screen and ($(medium)) {
+
+}
+
+/* large */
+@media screen and ($(large)) {
+
+}
+
+/* xlarge */
+@media screen and ($(xlarge)) {
+
+}

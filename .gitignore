@@ -123,20 +123,20 @@ $RECYCLE.BIN/
 
 #cambrian - Page Content (except docs)
 /pages/*/*
-!/pages/home/*
-!/pages/docs/*
+#!/pages/home/*
+#!/pages/docs/*
 
 #cambrian - Page Layout
-/layout/html/*
-/layout/css/*
-/layout/img/*
-/layout/js/*
+#/layout/html/*
+#/layout/css/*
+#/layout/img/*
+#/layout/js/*
 
 #cambrian - Cache
-/public/css/*
-/public/html/*
-/public/img/*
+#/public/css/*
+#/public/html/*
+#/public/img/*
 
 #cambrian - temporary exclude
-/vendors/css-crush/*
-/config/main.php
+#/vendors/css-crush/*
+#/config/main.php

@@ -1,0 +1,21 @@
+/**
+ * Pevo.science - css by Alexander Drichel - alex@pevo.science
+ * Based on Crush - the-echoplex.net/csscrush/
+ *
+ * Description: Helper classes
+ *
+ */
+
+/* ==========================================================================
+   Global helper
+   ========================================================================== */
+
+.invisible{
+    width: 0;
+    height: 0;
+    left: -1000px;
+    top: -1000px;
+    position: absolute;
+    overflow: hidden;
+    display: inline;
+}

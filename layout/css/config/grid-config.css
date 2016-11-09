@@ -1,0 +1,74 @@
+/**
+ * Pevo.science - css by Alexander Drichel - alex@pevo.science
+ * Based on Crush - the-echoplex.net/csscrush/
+ *
+ * Description: variables and layout definition for the grid system
+ *
+ */
+
+/* =============================================================================
+   Variables
+   ========================================================================== */
+
+@define {
+    grid-gutter: 15px;
+    small:  min-width:28em;
+    medium: min-width:48em;
+    large:  min-width:62.5em;
+    xlarge: min-width:75em;
+}
+
+
+
+/* =============================================================================
+   Layout
+   ========================================================================== */
+
+.row {
+@extend row;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 15px;
+}
+
+/* span 2 cols at large breakpoint, 4 at medium, 6 at small, 12 (full width) by default */
+.col-2 {
+@extend col, xsmall-col-twelve, small-col-six, medium-col-four, large-col-two;
+}
+
+/* span 6 cols at large breakpoint, 12 by default */
+.col-3 {
+@extend col, xsmall-col-twelve, small-col-six, medium-col-four, large-col-three;
+}
+
+/* span 6 cols at large breakpoint, 12 by default */
+.col-4 {
+@extend col, xsmall-col-twelve, small-col-six, medium-col-four, large-col-four;
+}
+
+/* span 6 cols at large breakpoint, 12 by default */
+.col-6 {
+@extend col, xsmall-col-twelve, small-col-six, medium-col-six, large-col-six;
+}
+
+/* span 6 cols at large breakpoint, 12 by default */
+.col-8 {
+@extend col, xsmall-col-twelve, small-col-six, medium-col-four, large-col-eight;
+}
+
+.col-9{
+@extend col, xsmall-col-twelve, small-col-six, medium-col-eight, large-col-nine;
+}
+
+.col-10{
+@extend col, xsmall-col-twelve, small-col-six, medium-col-eight, large-col-ten;
+}
+
+.col-12 {
+@extend col, xsmall-col-twelve
+}
+
+

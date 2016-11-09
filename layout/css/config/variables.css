@@ -1,0 +1,52 @@
+/**
+ * Pevo.science - css by Alexander Drichel - alex@pevo.science
+ * Based on Crush - the-echoplex.net/csscrush/
+ *
+ * Description: CSS variables
+ *
+ */
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@define {
+
+    /*desktop: 1199px;*/
+    /*tablet: 959px;*/
+    /*mobile: 479px;*/
+
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+@define {
+
+    /* Colors
+       ========================================================================== */
+
+    white:  #FBF9FC;
+    light-grey: #E9E9DF;
+
+    black:  #160D1C;
+
+    green1:  #AFBA14;
+    magenta1: #AB1642;
+    petrol1:   #20666F;
+
+    light-blue1: #D2D9E2;
+    light-blue2: #B0C5C8;
+    light-blue3: #8CA3B8;
+
+
+    /* Font
+       ========================================================================== */
+    base-font: 'Rubik', sans-serif;;
+    alt-font: 'Exo 2', sans-serif;
+
+    base-font-size: 1.5em;
+    base-font-color: $(black);
+
+}
