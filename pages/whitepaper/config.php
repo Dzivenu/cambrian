@@ -1,11 +1,11 @@
 <?php
 $pageconfig = [
   'metadata' => [
-    'title' => 'whitepaper_pageconfig',
+    'title' => 'PEvO Whitepaper',
     'description' => '',
     'tags' => ''
   ],
   'bodyClass' => 'body',
   'wrapperTemplate' => 'mod_core_wrapper_home',
-  'pageTitle' => 'whitepaper_pageconfig'
+  'pageTitle' => 'White paper'
 ];
