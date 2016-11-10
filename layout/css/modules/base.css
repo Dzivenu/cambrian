@@ -24,18 +24,176 @@ body {
 /* ==========================================================================
    Header
    ========================================================================== */
+
+
+#header {
+    background-color: #fff;
+    position: relative;
+}
+
 #header a {
     display: block;
 }
 
-#header {
-    background-color: #fff;
+#header > .container{
+    padding-bottom: 25px;
+    padding-top: 25px;
 }
 
-#header > .container{
-    padding-bottom: 20px;
-    padding-top: 20px;
-    /*border-bottom: 3px solid $(light-blue1);*/
+
+/* Key visual - puzzle
+   ========================================================================== */
+
+:any(#header,#footer) :any(.puzzle-right, .puzzle-left) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    bottom: 0;
+    width: 120px;
+    display: block;
+}
+
+#header .puzzle-left {
+    right: auto;
+    left: 0;
+}
+
+#footer .puzzle-right {
+    right: auto;
+    left: 0;
+    transform: rotate(180deg);
+}
+#footer .puzzle-left {
+    transform: rotate(180deg);
+}
+
+:any(#header,#footer) :any(.puzzle-right, .puzzle-left) > div{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+:any(#header,#footer) :any(.puzzle-right, .puzzle-left) span {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+}
+:any(#header,#footer) .puzzle-left span {
+    right: auto;
+    left: 0;
+}
+
+:any(#header,#footer) :any(.puzzle-right, .puzzle-left) span:after {
+    content: "";
+    display: block;
+    width: 0;
+    border-style: solid;
+    border-width: 0 0 30px 30px;
+    border-color: transparent transparent $(petrol1) transparent;
+}
+
+/* Puzzle right */
+
+:any(#header,#footer) .puzzle-right span.tri-1 {
+    right: 30px;
+    transform: rotate(-180deg)
+}
+
+:any(#header,#footer) .puzzle-right span.tri-1:after{
+    border-bottom-color: $(green1);
+}
+
+
+:any(#header,#footer) .puzzle-right span.tri-2 {
+    transform: rotate(-90deg)
+}
+
+:any(#header,#footer) .puzzle-right span.tri-2:after{
+    border-bottom-color: $(magenta1);
+}
+
+:any(#header,#footer) .puzzle-right span.tri-3 {
+    right: 60px;
+    bottom: 0;
+    top: auto;
+}
+
+:any(#header,#footer) .puzzle-right span.tri-3:after{
+    border-bottom-color: $(light-blue2);
+}
+
+:any(#header,#footer) .puzzle-right span.tri-4 {
+    right: 0;
+    bottom: 0;
+    top: auto;
+}
+
+:any(#header,#footer) .puzzle-right span.tri-4:after{
+    border-width: 0 0 60px 60px;
+}
+
+/* Puzzle left */
+
+:any(#header,#footer) .puzzle-left span.tri-1 {
+    left: 0;
+    transform: rotate(-90deg);
+}
+
+:any(#header,#footer) .puzzle-left span.tri-1:after{
+    border-bottom-color: $(magenta1);
+}
+
+
+:any(#header,#footer) .puzzle-left span.tri-2 {
+    left: 30px;
+    transform: rotate(-180deg);
+}
+
+:any(#header,#footer) .puzzle-left span.tri-2:after{
+    border-bottom-color: $(green1);
+}
+
+:any(#header,#footer) .puzzle-left span.tri-3 {
+    left: 60px;
+    transform: rotate(-180deg);
+}
+
+:any(#header,#footer) .puzzle-left span.tri-3:after{
+}
+
+:any(#header,#footer) .puzzle-left span.tri-4 {
+    left: 0;
+    bottom: 0;
+    top: auto;
+}
+
+:any(#header,#footer) .puzzle-left span.tri-4:after{
+    border-width: 0 0 60px 60px;
+}
+
+:any(#header,#footer) .puzzle-left span.tri-5 {
+    left: 60px;
+    bottom: 0;
+    top: auto;
+}
+
+:any(#header,#footer) .puzzle-left span.tri-5:after{
+    border-bottom-color: $(magenta1);
+}
+
+:any(#header,#footer) .puzzle-left span.tri-6 {
+    left: 90px;
+    bottom: 0;
+    top: auto;
+    transform: rotate(90deg);
+}
+
+:any(#header,#footer) .puzzle-left span.tri-6:after{
+    border-bottom-color: $(light-blue2);
 }
 
 /* ==========================================================================
@@ -53,13 +211,103 @@ body {
     background: $(petrol1);
 }
 
+.jumbo.light-blue {
+    background: $(light-blue2);
+}
+
 .jumbo.magenta {
     background: $(magenta1);
 }
 
+.row.center-text {
+    padding: 30px 0;
+}
+
+
+/* Sidebar / Index
+   ========================================================================== */
+
+.sidebar {
+    background: $(light-blue2);
+    margin-top: 2em;
+    color: $(white);
+}
+
+.sidebar h4 {
+    margin-top: 0;
+    padding-top:6px;
+}
+
+.sidebar ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.sidebar ul li:before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 0;
+    border-color: $(white) transparent transparent transparent;
+    margin-right: 10px;
+    transform: translateY(-3px);
+}
+
+
 
 /* ==========================================================================
    Footer
+   ========================================================================== */
+
+#footer {
+    padding-top: 25px;
+}
+
+#footer > div {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+#footer > div.top {
+    background-color: $(green1);
+    color: #fff;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+
+#footer > div.btm:after {
+    content: "";
+    display: block;
+    width: 0;
+    border-style: solid;
+    border-width: 30px 30px 0 0;
+    border-color: $(green1) transparent transparent transparent;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+#footer strong {
+    font-size: 24px;
+}
+
+
+#footer a {
+    font-family: $(alt-font);
+    font-size: 20px;
+}
+
+/* ==========================================================================
+   Media-Queries
    ========================================================================== */
 
 

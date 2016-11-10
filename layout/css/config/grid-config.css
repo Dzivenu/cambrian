@@ -11,7 +11,7 @@
    ========================================================================== */
 
 @define {
-    grid-gutter: 15px;
+    grid-gutter: 20px;
     small:  min-width:28em;
     medium: min-width:48em;
     large:  min-width:62.5em;
@@ -31,7 +31,7 @@
 .container {
     margin: 0 auto;
     max-width: 1200px;
-    padding: 0 15px;
+    padding: 0 $(grid-gutter);
 }
 
 /* span 2 cols at large breakpoint, 4 at medium, 6 at small, 12 (full width) by default */

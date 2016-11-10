@@ -19,3 +19,7 @@
     overflow: hidden;
     display: inline;
 }
+
+.center-text {
+    text-align: center;
+}

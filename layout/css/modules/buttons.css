@@ -1,0 +1,53 @@
+/**
+ * Pevo.science - css by Alexander Drichel - alex@pevo.science
+ * Based on Crush - the-echoplex.net/csscrush/
+ *
+ * Description: Button styling
+ *
+ */
+
+/* ==========================================================================
+   Base Button
+   ========================================================================== */
+
+
+.btn {
+    display: inline-block;
+    font-size: 1.6em;
+    font-weight: 400;
+    color: $(white);
+    background-color: $(petrol1);
+    text-align: center;
+    padding: 9px;
+    transition: background .2s;
+}
+
+.btn > .inner{
+    display: inline-block;
+    line-height: 30px;
+    padding: 0 30px;
+    border: 1px solid $(white);
+}
+
+.btn:any(:hover,:active,:focus) {
+    cursor: pointer;
+    background-color: $(magenta1);
+    color: white;
+}
+
+
+.btn.magenta {
+    background-color: $(magenta1);
+}
+
+.btn.magenta:any(:hover,:active,:focus){
+    background-color: $(petrol1);
+} 
+
+.btn.green {
+    background-color: $(green1);
+}
+
+.btn.green:any(:hover,:active,:focus){
+    background-color: $(magenta1);
+} 

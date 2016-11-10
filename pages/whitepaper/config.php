@@ -1,11 +1,11 @@
 <?php
 $pageconfig = [
   'metadata' => [
-    'title' => '',
+    'title' => 'whitepaper_pageconfig',
     'description' => '',
     'tags' => ''
   ],
   'bodyClass' => 'body',
   'wrapperTemplate' => 'mod_core_wrapper_home',
-  'pageTitle' => 'Cambrian CMS home'
+  'pageTitle' => 'whitepaper_pageconfig'
 ];

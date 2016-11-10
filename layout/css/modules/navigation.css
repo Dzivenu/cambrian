@@ -42,7 +42,7 @@
    ========================================================================== */
 
 #main_navigation :any(a,span){
-    font-family: $(base-font);
+    font-family: $(alt-font);
     font-weight: 500;
 }
 
@@ -56,11 +56,27 @@
 
 /* small */
 @media screen and ($(small)) {
-
+    #main_navigation ul {
+        float: right;
+    }
     #main_navigation li {
-    width: 33%; /*defined by the number*/
+    display: block;
+    width: auto;
     float: left;
-}
+    padding-left: 30px;
+    border-left: 1px solid $(black);
+    margin: 10px 0 10px 30px;
+    }
+
+    #main_navigation li:first-of-type {
+        border-left: none;
+    }
+
+    #main_navigation ul :any(a,span){
+        text-align: right;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 }
 
 /* medium */
@@ -71,15 +87,11 @@
 /* large */
 @media screen and ($(large)) {
     #main_navigation {
-    width: 50%;
     float: right;
 }
 
     #main_navigation ul {
         padding-top: 0;
-}
-    #main_navigation ul :any(a,span){
-        text-align: right;
 }
 }
 

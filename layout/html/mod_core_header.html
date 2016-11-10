@@ -22,18 +22,40 @@
                 </a>
             </div>
             <div class="col-10">
-                <?php $this->includeFile(
-                    'mod_navigation_main',
-                    [
-                        'pages'=>[
-                            ['page'=>'home'],
-                            ['page'=>'docs'],
-                            ['external'=>true,'href'=>'https://github.com/pharesim/cambrian','title'=>'fork it']
+                <?php
+                /* @todo prettier solution */
+                if(array_key_exists('navigation',$this->data['config']['modules'])) {
+                    $this->includeFile(
+                        'mod_navigation_main',
+                        [
+                            'pages'=>[
+                                ['page'=>'home'],
+                                ['page'=>'whitepaper'],
+                                ['external'=>true,'href'=>'https://chat.pevo.science','title'=>'chat']
+                            ]
                         ]
-                    ]
-                ); ?>
+                    );
+                }
+                ?>
             </div>
         </div>
-
+    </div>
+    <div class="puzzle-right">
+        <div>
+            <span class="tri-1"></span>
+            <span class="tri-2"></span>
+            <span class="tri-3"></span>
+            <span class="tri-4"></span>
+        </div>
+    </div>
+    <div class="puzzle-left">
+        <div>
+            <span class="tri-1"></span>
+            <span class="tri-2"></span>
+            <span class="tri-3"></span>
+            <span class="tri-4"></span>
+            <span class="tri-5"></span>
+            <span class="tri-6"></span>
+        </div>
     </div>
 </header>

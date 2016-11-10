@@ -29,6 +29,8 @@ a:hover {
 :any(h1,h2,h3,h4,h5,h6){
     font-family: $(alt-font);
     font-weight: 500;
+    margin-top: .75em;
+    margin-bottom: .5em;
 }
 
 h1 {
@@ -59,8 +61,18 @@ h6 {
     copy
    ========================================================================== */
 
+li,
 p {
     font-size: 1.1em;
-    line-height: 1.7em;
+    line-height: 1.5em;
     font-weight: 300;
+}
+
+li{
+    font-weight: 400;
+}
+
+strong,
+b{
+    font-weight: 500;
 }

@@ -77,10 +77,11 @@
             "modules\/typography.css",
             "modules\/form.css",
             "modules\/navigation.css",
+            "modules\/buttons.css",
             "modules\/base.css",
             "modules\/helper.css"
         ],
-        "datem_sum": 14785632636,
+        "datem_sum": 16265748863,
         "options": {
             "output_dir": "..\/public\/css",
             "output_file": "style",

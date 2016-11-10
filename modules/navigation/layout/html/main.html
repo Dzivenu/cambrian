@@ -1,24 +1,22 @@
-<?php 
-  $navigation = new Cambrian\Modules\Navigation(
-    $this->data['pages']
-  );
+<?php
+$navigation = new Cambrian\Modules\Navigation($this->data['pages']);
 ?>
 <nav id="main_navigation" class="mod-navigation">
-  <ul>
-    <?php foreach($navigation->pages as $page): ?>
-    <li>
-      <?php if ($page['href'] === $this->data['url']): ?>
-        <span class="active"><?= $page['title'] ?></span>
-      <?php else: ?>
-        <a href="<?= $page['href']?>"<?php
-          if(isset($page['external']) && $page['external'])
-            echo 'target="_blank"';
-          echo '>';
-          echo $page['title'];
-        ?></a>
-      <?php endif; ?>
+    <ul>
+        <?php foreach ($navigation->pages as $page): ?>
+            <li>
+                <?php if ($page['href'] === $this->data['url']): ?>
+                    <span class="active"><?= $page['title'] ?></span>
+                <?php else: ?>
+                    <a href="<?= $page['href'] ?>"<?php
+                    if (isset($page['external']) && $page['external']) echo 'target="_blank"';
+                    echo '>';
+                    ?>
+                    <?= $page['title'] ?>
+                    </a>
+                <?php endif; ?>
 
-    </li>
-    <?php endforeach; ?>
-  </ul>
+            </li>
+        <?php endforeach; ?>
+    </ul>
 </nav>
