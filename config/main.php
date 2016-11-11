@@ -10,7 +10,7 @@
  * @todo module management
  */
 $modules = [
-  'navigation'=>[1],
+  'navigation'=>true,
   'csscrush'=>[
     'input_file'=>'../layout/css/main.css',
     'output_dir'=>'../public/css',
