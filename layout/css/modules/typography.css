@@ -85,3 +85,7 @@ strong,
 b{
     font-weight: 500;
 }
+
+blockquote p {
+    font-size: 1.5em
+}
