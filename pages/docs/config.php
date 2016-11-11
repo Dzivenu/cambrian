@@ -1,0 +1,12 @@
+<?php
+$pageconfig = [
+  'metadata' => [
+    'title' => '',
+    'description' => '',
+    'tags' => ''
+  ],
+  'bodyClass' => 'body',
+  'wrapperTemplate' => 'mod_core_wrapper',
+  'pageTitle' => 'Cambrian CMS documentation',
+  'navigationTitle' => 'Documentation'
+];

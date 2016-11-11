@@ -25,15 +25,6 @@ Class Config
   function setModules($m) {
     if(empty($m) || $m == []) {
       $m = $this->config['modules'];
-    } elseif($m == 'all') {
-      $m = [];
-      // @todo load modules from folders available in /modules
-      $installed = CambrianFiles::readDir('../modules');
-      foreach($installed as $module => $data) {
-        if($data['type'] == 'dir') {
-          $m[] = $module;
-        }
-      }
     }
 
     return $this->loadModules($m);

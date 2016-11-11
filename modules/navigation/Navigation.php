@@ -12,6 +12,9 @@ class Navigation
       if(isset($link['page']))
       {
         if(isset($pages[$link['page']])) {
+          if(isset($link['title'])) {
+            $pages[$link['page']]['title'] = $link['title'];
+          }
           $result[] = $pages[$link['page']];
         }
       } else {
@@ -31,10 +34,16 @@ class Navigation
         $content = \Cambrian\Files::readDir('../pages/'.$key);
         foreach($content as $k=>$v) {
           if($k == 'content.html') {
-            $result[$key] = [
-              'href'=>'/'.$key,
-              'title'=>$key
-            ];
+            $result[$key]['href'] = '/'.$key;
+            if(!isset($result[$key]['title'])) {
+              $result[$key]['title'] = $key;
+            }
+          }
+          if($k == 'config.php') {
+            include('../pages/'.$key.'/config.php');
+            if(isset($pageconfig['navigationTitle'])) {
+              $result[$key]['title'] = $pageconfig['navigationTitle'];
+            }
           }
         }
       }
