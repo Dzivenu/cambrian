@@ -24,12 +24,10 @@ a:hover {
 
 .petrol a {
     color: $(magenta1);
-    text-decoration: none;
-    transition: color .25s;
 }
 
 
-a:hover {
+.petrol a:hover {
     color: $(green1);
 }
 
