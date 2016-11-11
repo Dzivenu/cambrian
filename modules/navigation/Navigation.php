@@ -12,6 +12,9 @@ class Navigation
       if(isset($link['page']))
       {
         if(isset($pages[$link['page']])) {
+          if(isset($link['title'])) {
+            $pages[$link['page']]['title'] = $link['title'];
+          }
           $result[] = $pages[$link['page']];
         }
       } else {
