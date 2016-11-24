@@ -133,7 +133,7 @@ $RECYCLE.BIN/
 #/layout/js/*
 
 #cambrian - Cache
-#/public/css/*
+/public/css/*
 #/public/html/*
 #/public/img/*
 

@@ -51,7 +51,6 @@ body {
     left: auto;
     bottom: 0;
     width: 120px;
-    display: block;
 }
 
 #header .puzzle-left {
@@ -314,20 +313,32 @@ body {
 /* small */
 @media screen and ($(small)) {
 
+    #header :any(.puzzle-left, .puzzle-right) {
+        display: block;
+    }
 
 }
 
 /* medium */
 @media screen and ($(medium)) {
 
+    #header :any(.puzzle-left, .puzzle-right) {
+        display: none;
+    }
 }
 
 /* large */
 @media screen and ($(large)) {
 
+    #header :any(.puzzle-left, .puzzle-right){
+        display: none;
+    }
 }
 
 /* xlarge */
 @media screen and ($(xlarge)) {
 
+    #header :any(.puzzle-left, .puzzle-right){
+        display: block;
+    }
 }
